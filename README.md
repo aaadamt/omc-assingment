@@ -19,13 +19,18 @@ response - {"status":200,"message":"Exchange rates fatched succesfully","data":[
 
 basic call without enddate, will get the data until the last day in the DB - 
 
-URL -http://localhost/omcfinal/inc/api.php?startdate=2023-03-06&fromcurrency=DLR
+URL - http://localhost/omcfinal/inc/api.php?startdate=2023-03-06&fromcurrency=DLR
 response - {"status":200,"message":"Exchange rates fatched succesfully","data":[{"date":"2023-06-15 00:00:00","rate":"3.58400","FromCur":"DLR","ToCur":"ILS"},{"date":"2023-06-16 00:00:00","rate":"3.55300","FromCur":"DLR","ToCur":"ILS"},{"date":"2023-06-19 00:00:00","rate":"3.60200","FromCur":"DLR","ToCur":"ILS"},{"date":"2023-06-20 00:00:00","rate":"3.60900","FromCur":"DLR","ToCur":"ILS"},{"date":"2023-06-21 00:00:00","rate":"3.60400","FromCur":"DLR","ToCur":"ILS"},{"date":"2023-06-22 00:00:00","rate":"3.62800","FromCur":"DLR","ToCur":"ILS"},{"date":"2023-06-23 00:00:00","rate":"3.62800","FromCur":"DLR","ToCur":"ILS"},{"date":"2023-06-26 00:00:00","rate":"3.62500","FromCur":"DLR","ToCur":"ILS"},{"date":"2023-06-27 00:00:00","rate":"3.63800","FromCur":"DLR","ToCur":"ILS"},{"date":"2023-06-28 00:00:00","rate":"3.67900","FromCur":"DLR","ToCur":"ILS"}]}
 
+basic call with false dates - 
 
+URL - http://localhost/omcfinal/inc/api.php?startdate=5-12-32&fromcurrency=DLR
+response - {"status":400,"message":"No Valid Start Date"}
 
+basic call with non-existing coin code - 
 
-
+URL - http://localhost/omcfinal/inc/api.php?startdate=2023-05-30&enddate=2023-08-31&fromcurrency=DLRR
+response - {"status":400,"message":"Invalid Currency"}
 
 
 omc_db.sql - 

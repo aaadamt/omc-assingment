@@ -6,6 +6,7 @@ file for the api service, build as a skeleton for full api service but as reques
 also contains protection from sql injections, intergation with the DB and dynamic query building.
 the api endpoint - localhost/omcfinal/inc/api.php
 relevant errors will return for non relevnt dates and non-existing coin codes
+only one coin allowed, and the rate will be from the coin sent to ILS.
 
 paramters to send - startdate, enddate, FromCurrency.
 

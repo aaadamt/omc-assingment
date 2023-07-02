@@ -25,7 +25,6 @@
                 WHERE date >= '" . $startDate ."'" . "AND date <= '" . $endDate ."'"
                 . "AND (cr1.name LIKE '".$CUR ."'" . "OR cr2.name LIKE '" . $CUR . "')"
                 ;
-        //echo $sql;
         $result = mysqli_query($conn, $sql);
 
         $rates_arr = array();
@@ -127,7 +126,6 @@
             if(isset($_GET['fromcurrency']))
             {
                 $CUR = mysqli_real_escape_string($conn, $_GET['fromcurrency']); // injection protection
-                //echo $CUR;
                 if(!isValidCurrency($CUR))
                 {
                     $status = 400;
